@@ -1,0 +1,111 @@
+
+
+1. #include <stdio.h>
+
+int main(void)
+{
+  int angka;
+  char grade;
+  printf("Input angka: ");
+  scanf("%d",&angka);
+  printf("\n");
+  
+  if(angka>=90)
+  {
+    printf("Grade : A");
+  }
+  else if(angka>=80 && angka<90)
+  {
+    printf("Grade : B");
+  }
+  else if(angka>=70 && angka<80)
+  {
+    printf("Grade : C");
+  }
+  
+  else if(angka>=60 && angka<70)
+  {
+    printf("Grade : D");
+  }
+  
+  else if( angka<60)
+  {
+    printf("Grade : E");
+  }
+  
+  
+  printf("\n");
+ 
+  return 0;
+}
+
+
+2. #include <stdio.h>
+
+int proses(int a){
+ 
+    if(a % 2 == 0)
+    {
+        printf("Bilangan Genap\n");
+    }
+    else
+    { 
+        printf("Bilangan Ganjil\n");
+    }
+}
+ 
+int main(){
+    int a; 
+    printf("Input Bilangan : "); scanf("%d",&a); 
+    proses(a); 
+    printf("\n");
+ 
+    return 0;
+}
+
+3. #include <stdio.h>
+ 
+int main(void)
+{
+  int n, i, data, N_min,N_max;
+  float jumlah=0;
+ 
+  printf("\nJumlah data (n): ");
+  scanf("%d", &n);
+ 
+  i=1;
+  while(i<=n){
+    printf("Data ke-%d : ", i);
+    scanf("%d", &data);
+ 
+    if(i == 1){ N_min = data; }
+ 
+    N_max = (N_max<data) ? data : N_max;
+    N_min = (N_min>data) ? data : N_min;
+    jumlah=jumlah+data;
+    i++;
+ }
+ printf("\nNilai maksimum : %d\n", N_max);
+ printf("Nilai minimum  : %d\n", N_min);
+ printf("Nilai rata-rata  : %.2f\n", jumlah/n);
+ 
+ return 0;
+}
+
+4. #include <stdio.h>
+#include <string.h>
+
+int cek(String input, int i, int j){
+  int k=j/2;
+  if (j==k){
+    printf("kata tersebut polindrome \n");
+    return 1;
+  } else if(input[i] != input[j]){
+    printf("kata tesebut bukan polindrome \n");
+    return 0;
+  } else{
+    return cek(input, i+1, j-1);
+  }
+
+}
+
